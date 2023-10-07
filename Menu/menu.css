@@ -1,0 +1,15 @@
+body {
+    background-color: #ECEBF0;
+}
+
+.navbar {
+    background-color: #ECEBF0;
+}
+
+.nav-link {
+    margin-left: 15px;
+    font-size: 30px;
+    color: #19181D;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif;
+}
