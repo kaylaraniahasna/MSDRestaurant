@@ -8,6 +8,19 @@
     width: 140px;
 }
 
+.content {
+    margin-top: 50px;
+}
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+  }
+
 .price-tag {
     position: absolute;
     top: 0;
