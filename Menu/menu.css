@@ -49,3 +49,16 @@
     font-weight: bold;
 }
 
+.custom-font-size {
+    font-size: 13px;
+}
+
+.active-target {
+    animation: scroll-center 0.5s forwards;
+  }
+  @keyframes scroll-center {
+    to {
+      scroll-margin-top: 50vh;
+    }
+  }
+  

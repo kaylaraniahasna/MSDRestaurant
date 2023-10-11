@@ -11,6 +11,40 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="menu.css">
   <title>Menu</title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdownItems = document.querySelectorAll(".dropdown-item[data-scroll-nav]");
+
+      dropdownItems.forEach(function (item) {
+        item.addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetIndex = this.getAttribute("data-scroll-nav");
+          scrollToElement(targetIndex);
+        });
+      });
+
+      function scrollToElement(targetIndex) {
+        const targetElements = document.querySelectorAll("[data-scroll-index]");
+        if (targetIndex >= 0 && targetIndex < targetElements.length) {
+          targetElements.forEach(function (element) {
+            element.classList.remove("active-target");
+          });
+          const targetElement = targetElements[targetIndex];
+          targetElement.classList.add("active-target");
+
+          // Scroll to the center of the target element
+          const elementTop = targetElement.getBoundingClientRect().top;
+          const offset = window.innerHeight / 2 - targetElement.clientHeight / 2;
+          window.scrollTo({
+            top: elementTop + window.scrollY - offset,
+            behavior: "smooth"
+          });
+        }
+      }
+    });
+  </script>
+
 </head>
 
 <body class="p-2 m-0 border-0 bd-example m-0 border-0">
@@ -38,6 +72,17 @@
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
+
+              <div class="dropdown" style="margin-left: 16px;">
+                <button class="btn btn-warning" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-filter"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item custom-font-size" href="#" data-scroll-nav="0">Makanan</a></li>
+                  <li><a class="dropdown-item custom-font-size" href="#" data-scroll-nav="1">Minuman</a></li>
+                  <li><a class="dropdown-item custom-font-size" href="#" data-scroll-nav="2">Makanan Ringan</a></li>
+                </ul>
+              </div>
             </div>
           </form>
         </div>
@@ -59,15 +104,15 @@
 
       <!-- Card Pertama -->
 
-      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" data-scroll-index='0'>
         <div class="card">
-          <div class="price-tag">Rp 28.000</div>
-          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt="">
+          <div class="price-tag">Rp 17.000</div>
+          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
           <div class="card-body p-3 pt-4 pb-10">
             <h4 class="card-title">Rica - Rica Ayam</h4>
-            <p class="card-text pt-2" style="font-size: 13px;">Rica - Rica atau terkadang hanya disebut rica adalah
-              jenis
-              bumbu pedas yang ditemukan di masakan Manado dari Sulawesi Utara, Indonesia.</p>
+            <p class="card-text pt-2" style="font-size: 13px;">Hidangan pedas khas Indonesia dengan ayam, cabai, dan
+              bumbu rica-rica yang menggugah selera. Kombinasi nikmat dari rasa pedas dan gurih</p>
 
             <div class="d-flex justify-content-end align-items-end">
               <button type="button" class="btn btn-warning rounded-circle">
@@ -80,15 +125,15 @@
 
       <!-- Card Kedua -->
 
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
         <div class="card">
-          <div class="price-tag">Rp 28.000</div>
-          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt="">
+          <div class="price-tag">Rp 35.000</div>
+          <img src="../Assets/img(2).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
           <div class="card-body p-3 pt-4 pb-10">
-            <h4 class="card-title">Rica - Rica Ayam</h4>
-            <p class="card-text pt-2" style="font-size: 13px;">Rica - Rica atau terkadang hanya disebut rica adalah
-              jenis
-              bumbu pedas yang ditemukan di masakan Manado dari Sulawesi Utara, Indonesia.</p>
+            <h4 class="card-title">Rica - Rica Bebek</h4>
+            <p class="card-text pt-2" style="font-size: 13px;">Bebek pedas dengan bumbu rica-rica yang gurih. Cita rasa
+              khas yang menggugah selera dengan perpaduan pedas dan gurih yang sempurna.</p>
 
             <div class="d-flex justify-content-end align-items-end">
               <button type="button" class="btn btn-warning rounded-circle">
@@ -101,15 +146,15 @@
 
       <!-- Card Ketiga -->
 
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
         <div class="card">
-          <div class="price-tag">Rp 28.000</div>
-          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt="">
+          <div class="price-tag">Rp 15.000</div>
+          <img src="../Assets/img(3).webp" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
           <div class="card-body p-3 pt-4 pb-10">
-            <h4 class="card-title">Rica - Rica Ayam</h4>
-            <p class="card-text pt-2" style="font-size: 13px;">Rica - Rica atau terkadang hanya disebut rica adalah
-              jenis
-              bumbu pedas yang ditemukan di masakan Manado dari Sulawesi Utara, Indonesia.</p>
+            <h4 class="card-title">Rica - Rica Ceker</h4>
+            <p class="card-text pt-2" style="font-size: 13px;">Ceker ayam pedas dan gurih. Citarasa pedas yang menggoda
+              dengan gurih yang nikmat, menciptakan hidangan yang sempurna untuk pecinta makanan pedas</p>
 
             <div class="d-flex justify-content-end align-items-end">
               <button type="button" class="btn btn-warning rounded-circle">
@@ -125,7 +170,7 @@
 
       <!-- Card Keempat -->
 
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-scroll-index='1'>
         <div class="card">
           <div class="price-tag">Rp 28.000</div>
           <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt="">
@@ -186,10 +231,79 @@
         </div>
       </div>
     </div>
+
+    <div class="row">
+
+      <!-- Card KeTujuh -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" data-scroll-index='0'>
+        <div class="card">
+          <div class="price-tag">Rp 17.000</div>
+          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Rica - Rica Ayam</h4>
+            <p class="card-text pt-2" style="font-size: 13px;">Hidangan pedas khas Indonesia dengan ayam, cabai, dan
+              bumbu rica-rica yang menggugah selera. Kombinasi nikmat dari rasa pedas dan gurih</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card KeDelapan -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" data-scroll-index='2'>
+        <div class="card">
+          <div class="price-tag">Rp 35.000</div>
+          <img src="../Assets/img(2).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Rica - Rica Bebek</h4>
+            <p class="card-text pt-2" style="font-size: 13px;">Bebek pedas dengan bumbu rica-rica yang gurih. Cita rasa
+              khas yang menggugah selera dengan perpaduan pedas dan gurih yang sempurna.</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card KeSembilan -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+        <div class="card">
+          <div class="price-tag">Rp 15.000</div>
+          <img src="../Assets/img(3).webp" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Rica - Rica Ceker</h4>
+            <p class="card-text pt-2" style="font-size: 13px;">Ceker ayam pedas dan gurih. Citarasa pedas yang menggoda
+              dengan gurih yang nikmat, menciptakan hidangan yang sempurna untuk pecinta makanan pedas</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  
+
+  <!-- Modal Pertama -->
+
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -198,34 +312,177 @@
         </div>
 
         <div class="modal-body">
-          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt="">
-          <h4 class="card-title pt-3">Rica - Rica Ayam</h4>
-          <p class="card-text pt-2" style="font-size: 13px;">Rica - Rica atau terkadang hanya disebut rica adalah
-            jenis bumbu pedas yang ditemukan di masakan Manado dari Sulawesi Utara, Indonesia.</p>
+          <img src="../Assets/img(1).webp" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
 
-          <div class="d-flex flex-row align-middle">
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Rica - Rica Ayam</h3>
 
-            <p class="text-price mr-2">Rp 28.000</p>
-
-            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-              <i class="fas fa-minus text-warning"></i>
-            </button>
-
-            <input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm"
-              style="width: 50px;" />
-
-            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-              <i class="fas fa-plus text-warning"></i>
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
             </button>
           </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Hidangan pedas khas Indonesia dengan ayam, cabai, dan bumbu
+            rica-rica yang menggugah selera. Kombinasi nikmat dari rasa pedas dan gurih</p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 17.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Modal Kedua -->
 
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
+        <div class="modal-body">
+          <img src="../Assets/img(2).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Rica - Rica Bebek</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Bebek pedas dengan bumbu rica-rica yang gurih. Cita rasa
+            khas yang menggugah selera dengan perpaduan pedas dan gurih yang sempurna</p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 35.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ketiga -->
+
+  <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(3).webp" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Rica - Rica Ceker</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Ceker ayam pedas dan gurih. Citarasa pedas yang menggoda
+            dengan gurih yang nikmat, menciptakan hidangan yang sempurna untuk pecinta makanan pedas</p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 15.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="2" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
-
 </html>
