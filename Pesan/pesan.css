@@ -1,0 +1,15 @@
+.txt-menu{
+    font-family: 'Jaldi', sans-serif;
+}
+
+.sticky-background {
+    background-color: #ECEBF0;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}  
+
+.font-cart{
+    font-family: 'Inder', sans-serif;
+    font-weight: 400;
+}

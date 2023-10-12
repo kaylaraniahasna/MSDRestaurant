@@ -19,7 +19,7 @@
     right: 0;
     z-index: 1000;
     background-color: #fff;
-  }
+}
 
 .price-tag {
     position: absolute;
@@ -28,7 +28,7 @@
     background-color: rgba(229, 229, 229, 0.562);
     padding: 5px;
     border-radius: 10px;
-    font-family: 'Roboto', sans-serif;  
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
@@ -36,7 +36,7 @@
     border: 0;
 }
 
-.card-body{
+.card-body {
     background-color: #E5E5E5;
     margin-top: -15px;
     border-radius: 10px;
@@ -58,7 +58,7 @@
 
 .text-price {
     font-size: 15;
-    font-family: 'Roboto', sans-serif;  
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
@@ -68,10 +68,28 @@
 
 .active-target {
     animation: scroll-center 0.5s forwards;
-  }
-  @keyframes scroll-center {
+}
+
+@keyframes scroll-center {
     to {
-      scroll-margin-top: 50vh;
+        scroll-margin-top: 50vh;
     }
-  }
-  
+}
+
+.btncart{
+    width: 30px;
+    height: 30px;
+}
+
+.font-cart{
+    font-family: 'Inder', sans-serif;
+    font-weight: 400;
+}
+
+.txt-harga {
+    font-size: 14px;
+}
+
+.card-total {
+    margin-top: 60px;
+}

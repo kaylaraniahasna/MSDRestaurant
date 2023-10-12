@@ -30,10 +30,10 @@
           targetElements.forEach(function (element) {
             element.classList.remove("active-target");
           });
+
           const targetElement = targetElements[targetIndex];
           targetElement.classList.add("active-target");
 
-          // Scroll to the center of the target element
           const elementTop = targetElement.getBoundingClientRect().top;
           const offset = window.innerHeight / 2 - targetElement.clientHeight / 2;
           window.scrollTo({
@@ -73,10 +73,11 @@
                 </button>
               </div>
 
-              <div class="dropdown" style="margin-left: 16px;">
+              <div class="dropdown" style="margin-left: 20px;">
                 <button class="btn btn-warning" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-filter"></i>
                 </button>
+
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item custom-font-size" href="#" data-scroll-nav="0">Makanan</a></li>
                   <li><a class="dropdown-item custom-font-size" href="#" data-scroll-nav="1">Minuman</a></li>
@@ -87,17 +88,157 @@
           </form>
         </div>
 
-        <button class="btn btn-warning position-relative" type="button" style="margin-left: 10px;">
+        <button class="btn btn-warning position-relative" type="button" style="margin-left: 10px;"
+          data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" href="#offcanvasExample" role="button"
+          aria-controls="offcanvasExample">
           <i class="fas fa-shopping-cart"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             4
             <span class="visually-hidden">unread messages</span>
           </span>
         </button>
-
       </div>
     </div>
   </nav>
+
+  <!-- Sidebar Keranjang -->
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Pesananku</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <!-- Card Keranjang 1 -->
+
+    <div class="container pt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body d-flex justify-content-between align-items-center">
+
+              <h5 class="card-title ml-3 mb-0 ps-2 font-cart" style="font-size: 16px; width: 50%;">Rica - Rica Ayam</h5>
+              <div class="d-flex align-items-center">
+                <p class="card-text mb-0 font-cart" style="font-size: 13px;">2 x</p>
+                <p class="card-text text-right mb-0 ps-4 font-cart" style="font-size: 13px;">Rp 34.000</p>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <button class="btn btn-danger btn-sm btncart" type="button">
+                  <i class="fa fa-times fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Keranjang 2 -->
+
+    <div class="container pt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body d-flex justify-content-between align-items-center">
+
+              <h5 class="card-title ml-3 mb-0 ps-2 font-cart" style="font-size: 16px; width: 50%;">Es Teh</h5>
+              <div class="d-flex align-items-center">
+                <p class="card-text mb-0 font-cart" style="font-size: 13px;">4 x</p>
+                <p class="card-text text-right mb-0 ps-4 font-cart" style="font-size: 13px;">Rp 20.000</p>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <button class="btn btn-danger btn-sm btncart" type="button">
+                  <i class="fa fa-times fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Keranjang 3 -->
+
+    <div class="container pt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body d-flex justify-content-between align-items-center">
+
+              <h5 class="card-title ml-3 mb-0 ps-2 font-cart" style="font-size: 16px; width: 50%;">Bakwan Jagung</h5>
+              <div class="d-flex align-items-center">
+                <p class="card-text mb-0 font-cart" style="font-size: 13px;">2 x</p>
+                <p class="card-text text-right mb-0 ps-4 font-cart" style="font-size: 13px;">Rp 10.000</p>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <button class="btn btn-danger btn-sm btncart" type="button">
+                  <i class="fa fa-times fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Card Keranjang 4 -->
+
+    <div class="container pt-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body d-flex justify-content-between align-items-center">
+
+              <h5 class="card-title ml-3 mb-0 ps-2 font-cart" style="font-size: 16px; width: 50%;">Es Jeruk</h5>
+              <div class="d-flex align-items-center">
+                <p class="card-text mb-0 font-cart" style="font-size: 13px;">1 x</p>
+                <p class="card-text text-right mb-0 ps-4 font-cart" style="font-size: 13px;">Rp 6.000</p>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <button class="btn btn-danger btn-sm btncart" type="button">
+                  <i class="fa fa-times fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtotal -->
+
+    <div class="container card-total">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h6>Ringkasan Pembayaran</h6>
+
+              <div class="d-flex justify-content-between align-items-center txt-harga pt-1">
+                <span>Subtotal Pembayaran (3 Menu)</span>
+                <span>Rp 64.000</span>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center txt-harga pt-1">
+                <span>Total Pembayaran</span>
+                <span>Rp 64.000</span>
+              </div>
+
+              <div style="margin-top: 40px;">
+                <div class="d-grid gap-1">
+                  <a href="../Pesan/pesan.html" class="btn btn-warning btn-block">Tambah Pesanan</a>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="ps-3 p-3 content">
     <div class="row">
@@ -247,7 +388,7 @@
 
       <!-- Card Ketujuh -->
 
-      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop7">
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop7" data-scroll-index='1'>
         <div class="card">
           <div class="price-tag">Rp 5.000</div>
           <img src="../Assets/img(7).jpg" class="card-img-top custom-rounded" alt=""
@@ -257,6 +398,7 @@
             <h4 class="card-title">Es Teh</h4>
             <p class="card-text pt-2" style="font-size: 13px; height: 67px;"> Nikmati kesegaran es teh manis kami yang
               segar, memberikan kelegaan dalam setiap tegukan.</p>
+
             <div class="d-flex justify-content-end align-items-end">
               <button type="button" class="btn btn-warning rounded-circle">
                 <i class="fas fa-plus"></i>
@@ -268,7 +410,7 @@
 
       <!-- Card Kedelapan -->
 
-      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop8" data-scroll-index='1'>
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop8">
         <div class="card">
           <div class="price-tag">Rp 6.000</div>
           <img src="../Assets/img(8).jpg" class="card-img-top custom-rounded" alt=""
@@ -368,6 +510,148 @@
             <h4 class="card-title">Es Kelapa Muda</h4>
             <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Es kelapa muda segar, sempurna untuk cuaca
               panas. Rasakan kesegaran dan kelembutan daging kelapa muda dalam setiap gigitan es ini.</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Makanan Ringan -->
+
+      <!-- Card Ketiga Belas -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop13" data-scroll-index='2'>
+        <div class="card">
+          <div class="price-tag">Rp 5.000</div>
+          <img src="../Assets/img(13).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Pisang Goreng</h4>
+            <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Pisang goreng yang renyah di luar dan lezat
+              di dalam. Dibuat dengan pisang pilihan yang digoreng hingga kecokelatan untuk menciptakan kelezatan yang
+              luar biasa.</p>
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Keempat Belas -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop14">
+        <div class="card">
+          <div class="price-tag">Rp 6.000</div>
+          <img src="../Assets/img(14).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Tahu Sumedang</h4>
+            <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Tahu goreng khas Sumedang yang gurih.
+              Dibuat dengan tahu pilihan yang digoreng hingga kecokelatan, memberikan rasa gurih yang nikmat.</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Kelima Belas -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop15">
+        <div class="card">
+          <div class="price-tag">Rp 4.000</div>
+          <img src="../Assets/img(15).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Keripik Singkong</h4>
+            <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Keripik singkong yang renyah. Dibuat dari
+              singkong pilihan yang diiris tipis dan digoreng hingga renyah. Camilan yang cocok untuk menemani waktu
+              santai Anda.</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Card Keenam Belas -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop16">
+        <div class="card">
+          <div class="price-tag">Rp 7.000</div>
+          <img src="../Assets/img(16).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Risoles</h4>
+            <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Risoles dengan isian lezat. Kulit risoles
+              yang renyah melingkupi isian berupa daging dan kentang yang gurih. Camilan yang sempurna untuk memenuhi
+              selera Anda.
+            </p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Ketujuh Belas -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop17">
+        <div class="card">
+          <div class="price-tag">Rp 5.000</div>
+          <img src="../Assets/img(17).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Bakwan Jagung</h4>
+            <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Bakwan jagung yang gurih. Dibuat dari
+              campuran jagung dan bumbu-bumbu pilihan, kemudian digoreng hingga kecokelatan. Rasakan kelezatan bakwan
+              jagung kami.</p>
+
+            <div class="d-flex justify-content-end align-items-end">
+              <button type="button" class="btn btn-warning rounded-circle">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Kedelapan Belas -->
+
+      <div class="col-md-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop18">
+        <div class="card">
+          <div class="price-tag">Rp 8.000</div>
+          <img src="../Assets/img(18).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+          <div class="card-body p-3 pt-4 pb-10">
+            <h4 class="card-title">Martabak Mini</h4>
+            <p class="card-text pt-2" style="font-size: 13px; height: 67px;">Martabak mini dengan berbagai pilihan rasa.
+              Martabak mini kami hadir dalam pilihan rasa yang beragam, mulai dari cokelat, keju, hingga kacang.</p>
 
             <div class="d-flex justify-content-end align-items-end">
               <button type="button" class="btn btn-warning rounded-circle">
@@ -743,6 +1027,8 @@
     </div>
   </div>
 
+  <!-- Minuman -->
+
   <!-- Modal Ketujuh -->
 
   <div class="modal fade" id="staticBackdrop7" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -985,6 +1271,7 @@
   </div>
 
   <!-- Modal Kesebelas -->
+
   <div class="modal fade" id="staticBackdrop11" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -1044,6 +1331,7 @@
   </div>
 
   <!-- Modal Kedua Belas -->
+
   <div class="modal fade" id="staticBackdrop12" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -1102,6 +1390,367 @@
     </div>
   </div>
 
-</body>
+  <!-- Makanan Ringan -->
 
+  <!-- Modal Ketiga Belas -->
+
+  <div class="modal fade" id="staticBackdrop13" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(13).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Pisang Goreng</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Pisang goreng yang renyah di luar dan lezat di dalam.
+            Dibuat dengan pisang pilihan yang digoreng hingga kecokelatan untuk menciptakan kelezatan yang luar biasa.
+          </p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 5.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Keempat Belas -->
+
+  <div class="modal fade" id="staticBackdrop14" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(14).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Tahu Sumedang</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Tahu goreng khas Sumedang yang gurih. Dibuat dengan tahu
+            pilihan yang digoreng hingga kecokelatan, memberikan rasa gurih yang nikmat.</p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 6.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Kelima Belas -->
+
+  <div class="modal fade" id="staticBackdrop15" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(15).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Keripik Singkong</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Keripik singkong yang renyah. Dibuat dari singkong pilihan
+            yang diiris tipis dan digoreng hingga renyah. Camilan yang cocok untuk menemani waktu santai Anda.</p>
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 4.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Keenam Belas  -->
+
+  <div class="modal fade" id="staticBackdrop16" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(16).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Risoles</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Risoles dengan isian lezat. Kulit risoles yang renyah
+            melingkupi isian berupa daging dan kentang yang gurih. Camilan yang sempurna untuk memenuhi selera Anda.
+          </p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 7.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ketujuh Belas -->
+
+  <div class="modal fade" id="staticBackdrop17" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(17).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Bakwan Jagung</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Bakwan jagung yang gurih. Dibuat dari campuran jagung dan
+            bumbu-bumbu pilihan, kemudian digoreng hingga kecokelatan. Rasakan kelezatan bakwan jagung kami.</p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 5.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Kedelapan Belas -->
+
+  <div class="modal fade" id="staticBackdrop18" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../Assets/img(18).jpg" class="card-img-top custom-rounded" alt=""
+            style="width: 100%; height: 220px;">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="card-title pt-3">Martabak Mini</h3>
+
+            <button class="btn btn-warning" type="button"
+              style="width: fit-content; height: fit-content; margin-top: 15px; margin-right: 5px;">
+              <i class="far fa-clipboard"></i>
+            </button>
+          </div>
+
+          <p class="card-text pt-3" style="font-size: 13px;">Martabak mini dengan berbagai pilihan rasa. Martabak mini
+            kami hadir dalam pilihan rasa yang beragam, mulai dari cokelat, keju, hingga kacang.</p>
+
+          <div class="d-flex flex-row justify-content-between align-middle">
+            <div class="d-flex align-middle">
+              <p class="text-price mr-2">Rp 8.000</p>
+            </div>
+
+            <!-- Variable Pengurangan Penambahan -->
+
+            <div class="d-flex">
+              <button class="btn btn-link px-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                <i class="fas fa-minus text-warning" style="font-size: 12px;"></i>
+              </button>
+
+              <div class="d-flex align-items-center">
+                <input id="form1" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm"
+                  style="width: 40px; height: 25px; font-size: 12px;" />
+              </div>
+
+              <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                <i class="fas fa-plus text-warning" style="font-size: 12px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <div class="d-grid gap-1">
+              <button class="btn btn-warning btn-block" type="button">Tambah Pesanan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
