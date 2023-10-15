@@ -93,3 +93,43 @@
 .card-total {
     margin-top: 60px;
 }
+
+@media (min-width: 768px) {
+    .carousel-inner {
+        height: 340px;
+        border-radius: 35px;
+        margin-top: 50px;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 40px;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-inner {
+        height: 170px;
+        border-radius: 25px;
+        margin-top: 50px;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 50px;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
